@@ -1,7 +1,12 @@
 <h1>Create a new Course</h1>
 {{ Form::open(array('url' => 'handle')) }}
 {{ Form::label('title', 'Title') }}
-{{  Form::text("title") }}
+{{ Form::text("title") }}
+<select>
+    @foreach ($organizations as $organization)
+<option>{{  $organization['name'] }}</option>
+    @endforeach
+</select>
 
 {{ Form::label('description', 'Description') }}
 {{ Form::textarea("title") }}

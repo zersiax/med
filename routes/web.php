@@ -20,5 +20,6 @@ Route::get('/', function () {
 });
 
 Route::get('/submit', function () {
-    return view('submit');
+    $organizations = App\Organization::all();
+    return view('submit')->withOrganizations($organizations);
 });

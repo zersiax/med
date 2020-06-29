@@ -19,8 +19,8 @@ class CreateCoursesTable extends Migration
             $table->text("Description");
             $table->decimal("price");
             $table->enum('category', ['e-learning', 'webinar', 'fysiek', 'congres']);
-            $table->bigInteger("organization_id");
-            $table->bigInteger("date_id");
+            $table->unsignedBigInteger("organization_id");
+            $table->unsignedBigInteger("date_id");
 
             $table->index('organization_id');
 

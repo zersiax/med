@@ -17,8 +17,8 @@ class CreateDatesTable extends Migration
         Schema::create('dates', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->dateTime("date");
-            $table->bigInteger('location_id');
-            $table->bigInteger('course_id');
+            $table->unsignedBigInteger('location_id');
+            $table->unsignedBigInteger('course_id');
 
             $table->index('location_id');
             $table->index('course_id');

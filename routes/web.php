@@ -14,5 +14,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $courses  = \App\Course::all();
+
+    return view('index')->withCourses($courses);
+});
+
+Route::get('/submit', function () {
+    return view('submit');
 });
